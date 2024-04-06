@@ -5,6 +5,9 @@
    fill: currentColor;
    display: block;
 }
+.bg-body-tertiary {
+   background-color: #000 !important;
+}
 .navbar__wrap {
    background: #000 !important;
 }
