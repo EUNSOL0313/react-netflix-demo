@@ -1,10 +1,12 @@
 .logo {
+   margin-top: 1.5rem;
    width: 9.25rem;
    height: 2.5rem;
    color: rgb(229, 9, 20);
    fill: currentColor;
    display: block;
 }
+
 .bg-body-tertiary {
    background-color: #000 !important;
 }
@@ -13,6 +15,8 @@
 }
 .nav-link {
    color: #fff !important;
+   padding-bottom: 1.2rem;
+   padding-left: 1rem;
 }
 .form-control {
    color: #666 !important;
