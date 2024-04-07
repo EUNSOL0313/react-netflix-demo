@@ -17,11 +17,11 @@ const Banner = () => {
       <div
          className="banner"
          style={{
-            backgroundImage: 'url(' + `https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/${data?.results[0].backdrop_path}` + ')',
+            backgroundImage: 'url(' + `https://image.tmdb.org/t/p/original/${data?.results[0].backdrop_path}` + ')',
          }}
       >
-         <div className="banner-text-area">
-            <h1>{data?.results[0].title}</h1>
+         <div className="text-white banner-text-area">
+            <h1>{data?.results[0].title}s</h1>
             <p>{data?.results[0].overview}</p>
          </div>
       </div>
