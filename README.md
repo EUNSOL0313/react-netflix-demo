@@ -1,3 +1,3 @@
 # REACT NETFLIX-DEMO with react-query
 
-## url : https://sol-react-net-flix.netlify.app/
+## url :https://lovely-ganache-015869.netlify.app/
