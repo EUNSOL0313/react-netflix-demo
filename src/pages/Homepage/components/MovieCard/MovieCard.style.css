@@ -1,0 +1,159 @@
+.movie-card {
+   width: 220px;
+   height: 330px;
+   background-size: cover;
+   cursor: pointer;
+   transition: 0.5s;
+   position: relative;
+}
+.movie-card::before {
+   position: relative;
+   width: 100%;
+   padding: 150%;
+   content: '';
+   display: block;
+   min-width: 100%;
+}
+
+.overlay {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: rgba(43, 41, 41, 0.9);
+   opacity: 0;
+   transition: all 1s;
+   color: white;
+   font-weight: bold;
+   overflow-wrap: break-word;
+   box-sizing: border-box;
+   padding: 10%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.movie-card:hover .overlay {
+   opacity: 1;
+}
+
+.movie-card:hover {
+   transform: scale(1.3) translateZ(20px);
+   z-index: 2;
+}
+
+.overlay h1 {
+   font-size: 6vw;
+   width: 100%;
+   overflow: hidden;
+   white-space: normal;
+   text-overflow: ellipsis;
+   word-break: keep-all;
+   -webkit-line-clamp: 3;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+}
+.badge-wrap {
+   display: flex;
+   gap: 4px;
+   flex-wrap: wrap;
+   border-top: 1px solid#eee;
+   padding-top: 15px;
+   margin-top: 10px;
+}
+.badge-wrap .badge {
+   font-size: 2.4vw;
+}
+.movie-card-adult {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+.movie-card-content {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   column-gap: 2.4vw;
+   font-size: 3vw;
+}
+.movie-popularity,
+.movie-vote {
+   display: flex;
+   align-items: center;
+   gap: 4px;
+}
+.movie-popularity svg,
+.movie-vote img {
+   width: 3vw;
+}
+.movie-popularity svg {
+   filter: invert();
+}
+.adult_all,
+.adult_18 {
+   color: #fff;
+   border-radius: 100%;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 4.5vw;
+   height: 4.5vw;
+   font-size: 1.8vw;
+}
+.adult_all {
+   background: #198754;
+}
+.adult_18 {
+   background: #dc3545;
+}
+
+@media (min-width: 465px) and (max-width: 1024px) {
+   .overlay h1 {
+      font-size: 4vw;
+   }
+   .badge-wrap .badge {
+      font-size: 1.6vw;
+   }
+   .movie-card-content {
+      font-size: 2vw;
+      column-gap: 1.5vw;
+   }
+   .adult_all,
+   .adult_19 {
+      width: 3vw;
+      height: 3vw;
+      font-size: 1.2vw;
+   }
+   .movie-popularity svg,
+   .movie-vote img {
+      width: 2vw;
+   }
+}
+@media (min-width: 1025px) {
+   .overlay h1 {
+      font-size: 1.8vw;
+   }
+   .badge-wrap .badge {
+      font-size: 0.8vw;
+   }
+   .movie-card-content {
+      font-size: 0.9vw;
+      column-gap: 0.7vw;
+   }
+   .adult_all,
+   .adult_19 {
+      width: 1.4vw;
+      height: 1.4vw;
+      font-size: 0.6vw;
+   }
+   .movie-popularity svg,
+   .movie-vote img {
+      width: 1vw;
+   }
+}

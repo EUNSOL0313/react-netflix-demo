@@ -1,0 +1,17 @@
+.carousel-container {
+   padding: 6% 0;
+}
+
+.popular-movies h3 {
+   padding: 0 1.5rem;
+}
+@media (min-width: 465px) and (max-width: 1024px) {
+   .carousel-container {
+      padding: 4.5% 0;
+   }
+}
+@media (min-width: 1025px) {
+   .carousel-container {
+      padding: 2% 0;
+   }
+}
