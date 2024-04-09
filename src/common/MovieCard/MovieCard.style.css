@@ -9,7 +9,7 @@
 .movie-card::before {
    position: relative;
    width: 100%;
-   padding: 150%;
+   padding-top: 150%;
    content: '';
    display: block;
    min-width: 100%;
@@ -120,6 +120,7 @@
    .badge-wrap .badge {
       font-size: 1.6vw;
    }
+
    .movie-card-content {
       font-size: 2vw;
       column-gap: 1.5vw;

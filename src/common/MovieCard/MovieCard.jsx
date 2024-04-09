@@ -1,10 +1,24 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
 import './MovieCard.style.css'
-import imdb from '../../../../assets/images/imdb.png'
-import { ReactComponent as LikeIcon } from '../../../../assets/images/like.svg'
+import imdb from '../../assets/images/imdb.png'
+import { ReactComponent as LikeIcon } from '../../assets/images/like.svg'
+import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
 
 const MovieCard = ({ movie }) => {
+   const { data: genreData } = useMovieGenreQuery()
+   console.log('genreData', genreData)
+
+   const showGenre = (genreIdList) => {
+      if (!genreData) return []
+      const genreNameList = genreIdList.map((id) => {
+         const genreObj = genreData.find((genre) => genre.id === id)
+         return genreObj.name
+      }) //장르 이름만 모인 것들이 map이 되어서 나옴
+
+      return genreNameList
+   }
+
    return (
       <div
          style={{ backgroundImage: 'url(' + `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}` + ')' }}
@@ -14,9 +28,9 @@ const MovieCard = ({ movie }) => {
             <div className="movie-card-title">
                <h1>{movie.title}</h1>
                <div className="badge-wrap">
-                  {movie.genre_ids.map((id, index) => (
+                  {showGenre(movie.genre_ids).map((genre, index) => (
                      <Badge bg="danger" key={index}>
-                        {id}
+                        {genre}
                      </Badge>
                   ))}
                </div>

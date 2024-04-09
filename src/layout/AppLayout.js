@@ -1,14 +1,23 @@
 import '../layout/AppLayout.style.css'
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Outlet, Link } from 'react-router-dom' //자손들 가져오는 것
+import { Outlet, Link, useNavigate } from 'react-router-dom' //자손들 가져오는 것
 import { ReactComponent as Logo } from '../assets/images/net_logo.svg'
 
 const AppLayout = () => {
+   const [keyword, setKeyword] = useState('')
+   const navigate = useNavigate()
+   const searchByKeyword = (event) => {
+      event.preventDefault()
+      //url로 바꿔주기
+      navigate(`/movies?q=${keyword}`)
+      setKeyword('')
+   }
+
    return (
       <div className="wrap">
          <Navbar expand="lg" className="bg-body-tertiary">
@@ -28,9 +37,18 @@ const AppLayout = () => {
                         Movies
                      </Link>
                   </Nav>
-                  <Form className="d-flex">
-                     <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
-                     <Button variant="outline-danger">Search</Button>
+                  <Form className="d-flex" onSubmit={searchByKeyword}>
+                     <Form.Control
+                        type="search"
+                        placeholder="Search"
+                        className="me-2"
+                        aria-label="Search"
+                        value={keyword}
+                        onChange={(event) => setKeyword(event.target.value)}
+                     />
+                     <Button variant="outline-danger" type="submit">
+                        Search
+                     </Button>
                   </Form>
                </Navbar.Collapse>
             </Container>

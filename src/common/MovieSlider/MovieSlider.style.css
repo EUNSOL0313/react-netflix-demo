@@ -2,8 +2,10 @@
    padding: 6% 0;
 }
 
-.popular-movies h3 {
+.movie-slider h3 {
    padding: 0 1.5rem;
+   margin-bottom: 0;
+   font-weight: bold;
 }
 @media (min-width: 465px) and (max-width: 1024px) {
    .carousel-container {
