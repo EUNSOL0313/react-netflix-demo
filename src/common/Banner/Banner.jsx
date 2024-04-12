@@ -5,7 +5,7 @@ import './Banner.style.css'
 const Banner = ({ movie }) => {
    const [modalShow, setModalShow] = useState(false)
    return (
-      <div>
+      <>
          <div
             style={{
                backgroundImage: 'url(' + `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.poster_path}` + ')',
@@ -22,7 +22,7 @@ const Banner = ({ movie }) => {
          </div>
 
          <MovieModal show={modalShow} onHide={() => setModalShow(false)} movie={movie} />
-      </div>
+      </>
    )
 }
 

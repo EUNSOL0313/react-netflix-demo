@@ -7,7 +7,7 @@
    margin-bottom: 0;
    font-weight: bold;
 }
-@media (min-width: 465px) and (max-width: 1024px) {
+@media (max-width: 465px) and (min-width: 786px) {
    .carousel-container {
       padding: 4.5% 0;
    }

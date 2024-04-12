@@ -14,7 +14,11 @@ const RelatedMovie = ({ id }) => {
       return <Alert variant="danger">{error.message}</Alert>
    }
 
-   return <MovieSlider title="Related Movies" movies={data.results} responsive={relatedMovieResponsive} />
+   return (
+      <div className="pt-5">
+         <MovieSlider title="Related Movies" movies={data.results} responsive={relatedMovieResponsive} />
+      </div>
+   )
 }
 
 export default RelatedMovie
