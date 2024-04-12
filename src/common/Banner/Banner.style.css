@@ -1,0 +1,21 @@
+.banner-text-area button {
+   font-family: 'Montserrat', sans-serif;
+   border: 2px solid red;
+   background-color: red;
+   color: white;
+   max-width: 200px;
+   min-width: 100px;
+   /* width: 50%; */
+}
+.banner-text-area button:hover {
+   background-color: black;
+   color: #fff;
+   border-color: red;
+}
+
+@media (max-width: 480px) {
+   .banner-text-area button {
+      margin-top: 0;
+      width: 80%;
+   }
+}

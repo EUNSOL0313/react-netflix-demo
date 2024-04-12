@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from './components/Banner/Banner'
+import HomepageBanner from './components/HomepageBanner/HomepageBanner'
 import './Homepage.style.css'
 import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide'
 import TopRatedMovies from './components/TopRatedMovies/TopRatedMovies'
@@ -13,7 +13,7 @@ import UpcomingMovies from './components/UpcomingMovies/UpcomingMovies'
 const Homepage = () => {
    return (
       <div className="wrap">
-         <Banner />
+         <HomepageBanner />
          <PopularMovieSlide />
          <TopRatedMovies />
          <UpcomingMovies />

@@ -4,8 +4,10 @@ import './MovieCard.style.css'
 import imdb from '../../assets/images/imdb.png'
 import { ReactComponent as LikeIcon } from '../../assets/images/like.svg'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
+import { useNavigate } from 'react-router-dom'
 
 const MovieCard = ({ movie }) => {
+   const navigate = useNavigate()
    const { data: genreData } = useMovieGenreQuery()
    console.log('genreData', genreData)
 
@@ -21,8 +23,9 @@ const MovieCard = ({ movie }) => {
 
    return (
       <div
-         style={{ backgroundImage: 'url(' + `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}` + ')' }}
          className="movie-card"
+         style={{ backgroundImage: 'url(' + `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}` + ')' }}
+         onClick={() => navigate(`/movies/${movie.id}`)}
       >
          <div className="overlay">
             <div className="movie-card-title">

@@ -1,9 +1,9 @@
 import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert'
-import './Banner.style.css'
+import './HomepageBanner.style.css'
 
-const Banner = () => {
+const HomepageBanner = () => {
    const { data, isLoading, isError, error } = usePopularMoviesQuery()
    console.log('popular data', data)
 
@@ -28,4 +28,4 @@ const Banner = () => {
    )
 }
 
-export default Banner
+export default HomepageBanner
