@@ -1,0 +1,119 @@
+.movie-credit-wrap {
+   width: 100%;
+   overflow: hidden;
+   margin: 0 auto;
+   padding: 0.5rem auto;
+   position: relative;
+}
+.credit-title {
+   padding-bottom: 0.5rem;
+   font-size: 2rem;
+   font-weight: 500;
+}
+
+.credit-directing-list,
+.credit-character-list {
+   width: 100%;
+   list-style: none;
+   padding: 0;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+}
+.credit-directing-list {
+   margin-bottom: 1rem;
+}
+.credit-directing-list li,
+.credit-character-list li {
+   width: 100%;
+   background-color: rgb(33, 37, 41);
+   border-radius: 1rem;
+   overflow: hidden;
+}
+.credit-directing-list li img,
+.credit-character-list li img {
+   width: 100%;
+}
+.credit-directing-list,
+.credit-character-list:hover {
+   cursor: pointer;
+}
+.credit-name,
+.credit-content {
+   word-break: break-all;
+   line-height: 1;
+}
+.credit-name {
+   font-size: 2vw;
+   font-weight: 500;
+   margin-bottom: 0.5rem;
+}
+
+.credit-box {
+   position: relative;
+   display: inline-block;
+}
+
+.credit-content-overlay {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.7);
+   opacity: 0;
+   transition: all 1s;
+   color: white;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   overflow-wrap: break-word;
+   box-sizing: border-box;
+   padding: 10%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+.credit-box:hover .credit-content-overlay {
+   display: flex;
+   opacity: 1;
+}
+
+@media (min-width: 465px) {
+   .credit-title {
+      font-size: calc(1.3rem + 0.6vw);
+   }
+   .credit-sub-title {
+      font-size: calc(1rem + 0.6vw);
+   }
+   .credit-name {
+      font-size: 1rem;
+   }
+   .credit-character {
+      font-size: 0.8rem;
+      color: #999;
+   }
+}
+@media (min-width: 465px) and (max-width: 1024px) {
+   .credit-directing-list,
+   .credit-character-list {
+      grid-template-columns: repeat(5, 1fr);
+   }
+}
+@media (min-width: 1025px) {
+   .movie-credit-wrap {
+      max-width: 1000px;
+      padding: 0.2rem 0;
+   }
+   .credit-directing-list,
+   .credit-character-list {
+      grid-template-columns: repeat(7, 1fr);
+   }
+   .credit-content {
+      padding: 1rem;
+   }
+}

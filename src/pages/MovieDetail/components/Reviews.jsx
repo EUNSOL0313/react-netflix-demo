@@ -2,11 +2,13 @@ import React from 'react'
 import { useMovieReviewsQuery } from '../../../hooks/useMovieReviewsQuery'
 import { Alert } from 'react-bootstrap'
 import ReviewBox from './ReviewBox/ReviewBox'
+import LoadingSpinner from '../../../common/LoadingSpinner/LoadingSpinner'
+
 const Reviews = ({ id }) => {
    const { data, isLoading, isError, error } = useMovieReviewsQuery(id)
 
    if (isLoading) {
-      return <h1>Loading...</h1>
+      return <LoadingSpinner />
    }
    if (isError) {
       return <Alert>{error.message}</Alert>

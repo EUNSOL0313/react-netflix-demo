@@ -3,19 +3,20 @@ import MovieSlider from '../../../common/MovieSlider/MovieSlider'
 import { useRelatedMoviesQuery } from '../../../hooks/useRelatedMovies'
 import { relatedMovieResponsive } from '../../../constants/responvie'
 import { Alert } from 'react-bootstrap'
+import LoadingSpinner from '../../../common/LoadingSpinner/LoadingSpinner'
 
 const RelatedMovie = ({ id }) => {
    const { data, isLoading, isError, error } = useRelatedMoviesQuery(id)
 
    if (isLoading) {
-      return <h1>Loading...</h1>
+      return <LoadingSpinner />
    }
    if (isError) {
       return <Alert variant="danger">{error.message}</Alert>
    }
 
    return (
-      <div className="pt-5">
+      <div>
          <MovieSlider title="Related Movies" movies={data.results} responsive={relatedMovieResponsive} />
       </div>
    )
