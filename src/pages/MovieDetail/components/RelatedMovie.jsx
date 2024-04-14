@@ -2,7 +2,7 @@ import React from 'react'
 import MovieSlider from '../../../common/MovieSlider/MovieSlider'
 import { useRelatedMoviesQuery } from '../../../hooks/useRelatedMovies'
 import { relatedMovieResponsive } from '../../../constants/responvie'
-import { Alert } from 'react-bootstrap'
+import { Alert, Container } from 'react-bootstrap'
 import LoadingSpinner from '../../../common/LoadingSpinner/LoadingSpinner'
 
 const RelatedMovie = ({ id }) => {
@@ -16,9 +16,9 @@ const RelatedMovie = ({ id }) => {
    }
 
    return (
-      <div>
+      <Container>
          <MovieSlider title="Related Movies" movies={data.results} responsive={relatedMovieResponsive} />
-      </div>
+      </Container>
    )
 }
 

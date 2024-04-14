@@ -3,7 +3,7 @@
 
 .movie-img {
    width: 440px;
-   height: 90vh;
+   height: 85vh;
    float: left;
    overflow: hidden;
    background: transparent;
@@ -31,7 +31,6 @@
    color: #e3e3e3;
    font-weight: 400;
    font-size: 14px;
-
    margin: 0.2rem 0 0 0;
    padding: 0 1.5rem 0 0;
 }
@@ -58,19 +57,23 @@
    padding: 0 0.2rem 0 0.2rem;
    margin: 0 0 0.2rem 0;
 }
-.row {
-   height: 70vh;
-   margin-bottom: 5rem;
-}
-@media (max-width: 464px) {
-   .row {
-      margin: 0 0 68rem 0;
-      padding: 0;
+/* PC (해상도 1024px)*/
+@media all and (min-width: 1024px) {
+   .movie-detail-overview {
+      min-height: min-content;
    }
 }
-@media (min-width: 465px) and (max-width: 768px) {
-   .row {
-      margin: 0 0 57rem 0;
-      padding: 0;
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+   .movie-detail-overview {
+      margin-bottom: 30rem;
+   }
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+   .movie-detail-overview {
+      margin-bottom: 40rem;
    }
 }

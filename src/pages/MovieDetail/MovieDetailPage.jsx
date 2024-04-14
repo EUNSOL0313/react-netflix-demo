@@ -27,8 +27,12 @@ const MovieDetailPage = () => {
    return (
       <>
          <Banner movie={data?.data} />
-         <Container className="movie-detail mt-2 pb-5">
-            <Row className="d-flex justify-content-center">
+         <Container
+            className=" movie-detail mt-2 
+         pb-5"
+            fluid
+         >
+            <Row className="d-flex justify-content-center movie-detail-overview">
                <Col xs={12} lg={6} className="movie-img d-flex justify-content-center mb-1">
                   <img className="w-100" src={`https://image.tmdb.org/t/p/original/${data.data.poster_path}`} />
                </Col>
@@ -73,13 +77,15 @@ const MovieDetailPage = () => {
                   <div className="d-flex justify-content-start movie-detail-rating border-bottom border-white">
                      <RatingStars />
                   </div>
-                  <div className="movie-detail-credit">
+                  <div className=" d-flex  movie-detail-credit">
                      <MovieCredit id={id} />
                   </div>
                </Col>
             </Row>
-            <RelatedMovie id={id} />
-            <Reviews id={id} />
+            <Col>
+               <RelatedMovie id={id} />
+               <Reviews id={id} />
+            </Col>
          </Container>
       </>
    )

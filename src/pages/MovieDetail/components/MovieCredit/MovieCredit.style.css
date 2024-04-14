@@ -2,7 +2,6 @@
    width: 100%;
    overflow: hidden;
    margin: 0 auto;
-   padding: 0.5rem auto;
    position: relative;
 }
 .credit-title {
@@ -105,10 +104,6 @@
    }
 }
 @media (min-width: 1025px) {
-   .movie-credit-wrap {
-      max-width: 1000px;
-      padding: 0.2rem 0;
-   }
    .credit-directing-list,
    .credit-character-list {
       grid-template-columns: repeat(7, 1fr);

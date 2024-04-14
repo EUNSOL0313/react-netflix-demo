@@ -7,7 +7,7 @@ import MovieCard from '../../common/MovieCard/MovieCard'
 const MovieSlider = ({ title, movies, responsive }) => {
    return (
       <div className="movie-slider">
-         <h3 className="fw-bold pt-5"> {title}</h3>
+         <h3 className="fw-bold pt-5">{title}</h3>
          {movies.length > 0 ? (
             <Carousel
                infinite={true}
